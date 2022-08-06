@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="js/worker-info.js"></script>
+    </head>
+    <body onresize="parent.resizeTo(500,550)" onload="parent.resizeTo(500,550)" onclick="window.close()">
+        <button id="enlargeBox">
+            <div class="enlarge_ProfileList">
+                <img class="profileImage" id="enlargeImg" >
+                <p id="info1"></p><p id="info2"></p>
+            </div>
+            <div class="signals" style="vertical-align: top;">
+                <img class="w_icon" src="icon/heart-attack.png">
+                <span class="circle" id="enlarge_w1">w1</span>
+
+                <img class="w_icon" src="icon/blood-pressure.png">
+                <span class="circle" id="enlarge_w2">w2</span>
+
+                <img class="w_icon" src="icon/o2.png">
+                <span class="circle" id="enlarge_w3">w3</span>
+
+                <img class="w_icon" src="icon/stress.png">
+                <span class="circle" id="enlarge_w4">w4</span>
+            </div>
+            <div class="charts">
+                <p>
+                    <span>1</span>
+                    <span>2</span>
+                </p>
+                <p>
+                    <span>3</span>
+                    <span>4</span>                
+                </p>
+            </div>
+        </button>
+    </body>
+    <script src="js/profile.js"></script>
+    <script src="js/lightCtrl.js"></script>
+    <script src="js/enlarge.js"></script>
+</html>
