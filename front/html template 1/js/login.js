@@ -6,6 +6,11 @@ const masterID = 'master';
 const masterPW = 'masterpw1234';
 
 let loadSet =[];
+if (localStorage.getItem('loginSets') == null) { 
+    localStorage.setItem('loginSets','[]')
+} else {
+    console.log('Exist')
+}
 
 //const inputID = JSON.parse(localStorage.getItem('loginKey'))['id']
 
@@ -21,20 +26,6 @@ function onLoginSubmit(event){  //추후에 DB연결해서 관리자 테이블 �
         if (setCheck == 2) { location.href = "register.html";  }
         else if (setCheck == 1) { location.href = "index.html";  }
     }
-    
-    /* 원래 코드
-    else{
-        if(checkID.value == masterID && checkPW.value == masterPW){
-            location.href = "register.html";
-        } else if(localStorage.getItem(checkID.value) == checkPW.value){
-            location.href = "index.html";
-        } else if(localStorage.getItem(checkID.value) == null){
-            alert("존재하지 않는 ID 입니다.");
-        } else{
-            alert("비밀번호가 틀렸습니다.");
-        }
-    }
-    */
 }
 
 function onLoginSubmitEnter(event){
@@ -52,40 +43,38 @@ function makeAccount(event){
         if(localStorage.getItem('loginSets')) {
             loadSet = JSON.parse(localStorage.getItem('loginSets'))
         }
-        // 저장된 set의 ID와 중복확인
-        for(i=0; i < loadSet.length; i++) {
-            console.log(`공간${i}`)
-            if(checkID.value == loadSet[i]['id']) {
-                checkID.value="";
-                checkPW.value="";
-                checkID.focus();
-                alert("이미 존재하는 ID 입니다.");
+        // 마스터 계정인지 확인
+        if (checkID.value == masterID){
+            checkID.value="";
+            checkPW.value="";
+            dcheckPW.value="";
+            checkID.focus();
+            alert("이미 존재하는 ID입니다.")
+        }
+        // 마스터 계정 아니면 다른 아이디와 중복 확인
+        else {
+            // 저장된 set의 ID와 중복확인
+            for(i=0; i < loadSet.length; i++) {
+                if(checkID.value == loadSet[i]['id']) {
+                    checkID.value="";
+                    checkPW.value="";
+                    dcheckPW.value="";
+                    checkID.focus();
+                    alert("이미 존재하는 ID 입니다.");
+                    return 0;
+                }
+            }
+            if (checkPW.value != dcheckPW.value){
+                alert("비밀번호가 일치하지 않습니다.");
+                return 0;
+            } else {
+                alert(`ID : ${checkID.value} \nPW${checkPW.value}로 생성되었습니다.`)
+                registerLoginSets(checkID.value, checkPW.value);
                 return 0;
             }
         }
-        if (checkPW.value != dcheckPW.value){
-                alert("비밀번호가 일치하지 않습니다.");
-                return 0;
-        }
-        else {
-                registerLoginSets(checkID.value, checkPW.value);
-                return 0;
-        }
     }
-    /* 원래 코드
-    else {
-        if(localStorage.getItem(checkID.value) != null){
-            alert("이미 존재하는 ID 입니다.");
-        } else if(checkPW.value != dcheckPW.value){
-            alert("비밀번호가 일치하지 않습니다.");
-        } else{
-            registerLoginSets(checkID.value, checkPW.value);   //지금은 local storage에 같이 저장되는데 나중에는 사원 테이블, 관리자 테이블 구분해야 함
-            checkID.value = "";
-            checkPW.value = "";
-            dcheckPW.value = "";
-            checkID.focus();
-        }
-    }*/
+
 }
 
 function makeAccountEnter(event){
