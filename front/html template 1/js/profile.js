@@ -66,7 +66,7 @@ function addProfile() {
 }
 
 function profilelistUpdate () {
-    const workersMount = localStorage.getItem("workersMount")
+    const workersMount = localStorage.getItem("WorkersMount")
     pTagCount = 0;      // 프로필 index 값 재설정
     signalCount = 1;    // 신호 id 값 재설정
 
