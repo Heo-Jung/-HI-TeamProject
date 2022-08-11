@@ -14,7 +14,7 @@ function addProfile() {
     let new_span = document.createElement('span');              // 새로운 span 태그 만들기
     new_span.setAttribute('class','profile-list');              // span 태그 속성 설정
     new_span.setAttribute('id',`${pTagCount}`);
-    new_span.addEventListener("click",newpage)
+    new_span.addEventListener("click",goTo_EnlargePage)
 
     // ⒜새로운 image 태그 만들기
     let new_img = document.createElement('img');                
@@ -75,7 +75,7 @@ function profilelistUpdate () {
     }
 }
 
-function newpage() {
+function goTo_EnlargePage() {
     let workerSelect = this.children[0].id;
     let selectIndex = parseInt(this.id);
     localStorage.setItem("workerSelect",workerSelect);

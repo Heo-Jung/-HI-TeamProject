@@ -1,13 +1,18 @@
 // Set new default font family and font color to mimic Bootstrap's default styling
-Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-Chart.defaults.global.defaultFontColor = '#292b2c';
+//Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+//Chart.defaults.global.defaultFontColor = '#292b2c';
+
+//
+let inputLabel = ["1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", "11일", "12일", "13일","14일"]
+
+let inputData = [98, 111, 105, 84, 85, 129, 100, 102, 105, 87, 99, 108, 110, 104]
 
 // Area Chart Example
 var ctxA = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctxA, {
   type: 'line',
   data: {
-    labels: ["1시", "2시", "3시", "4시", "5시", "6시", "7시", "8시", "9시", "10시", "11시", "12시", "13시"],
+    labels: inputLabel,
     datasets: [{
       label: "심박수",
       lineTension: 0.5,
@@ -20,10 +25,15 @@ var myLineChart = new Chart(ctxA, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 20,
       pointBorderWidth: 2,
-      data: [10000, 59162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: inputData,
     }],
   },
   options: {
+    title : {
+      display :true,
+      fontSize : 15,
+      text : '최근 2주 심박수평균'
+    },
     scales: {
       xAxes: [{
         time: {
@@ -39,7 +49,7 @@ var myLineChart = new Chart(ctxA, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 60000,
+          max: 200,
           maxTicksLimit: 7  // Y축 선의 갯수 (0포함)
         },
         gridLines: {

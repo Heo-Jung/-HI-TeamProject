@@ -50,16 +50,16 @@ function updateEnlarge() {
     enlargeInfo2.innerHTML = '나　　이 : '+workers[selectIndex].age+'<br>직　　책 : '+workers[selectIndex].posit+'<br>위　　치 : '+workers[selectIndex].locate+'<br>';
 
     enlarge_w1.innerHTML = workers[selectIndex].w1;
-    light1(workers[selectIndex].w1, enlarge_w1);
+    light1(selectIndex,workers[selectIndex].w1, enlarge_w1);
 
     enlarge_w2.innerHTML = workers[selectIndex].w2;
-    light2(workers[selectIndex].w2, enlarge_w2);
+    light2(selectIndex,workers[selectIndex].w2, enlarge_w2);
 
     enlarge_w3.innerHTML = workers[selectIndex].w3;
-    light3(workers[selectIndex].w3, enlarge_w3)
+    light3(selectIndex,workers[selectIndex].w3, enlarge_w3)
     
     enlarge_w4.innerHTML = workers[selectIndex].w4;
-    light4(workers[selectIndex].w4, enlarge_w4)
+    light4(selectIndex,workers[selectIndex].w4, enlarge_w4)
 }
 
 

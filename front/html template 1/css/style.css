@@ -1,18 +1,5 @@
-.devide {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.BlkBoarder {
-    padding: 4px;
-    padding-bottom: 8px;
-    border: 2px solid black;
-}
-.hello {
-    color : rgb(0, 107, 2);
-}
-#clock {
-    margin : 0px
+#cardMinWidth {
+    min-width: 665px;
 }
 #profile-lists {
     margin: 1px;
@@ -27,13 +14,11 @@
     border: 0;
     border-radius: 10px;
     background-color: rgb(202, 202, 202);
-    background-image: linear-gradient(to top left,
-                                    rgba(0, 0, 0, .2),
-                                    rgba(0, 0, 0, .2) 30%,
-                                    rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-    background-color: rgb(242, 242, 242);
+    background-image: linear-gradient(to right,
+                                    rgba(0, 0, 0, .4),
+                                    rgba(122, 122, 122, .5) 10%,
+                                    rgba(255, 255, 255, 1));
+    background-color : rgb(242, 242, 242);
 }
 .profile-list:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
@@ -64,24 +49,25 @@
     margin-top: 7px;
 }
 #enlargeBox {
+    margin: 0px;
     display: grid;
-    width : 470px;
-    height: 460px;
+    width : 540px;
+    height: 570px;
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
     border-radius: 10px;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(245, 255, 248);
     background-image: linear-gradient(to top left,
                                     rgba(0, 0, 0, .2),
                                     rgba(0, 0, 0, .2) 30%,
                                     rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
                 inset -2px -2px 3px rgba(0, 0, 0, .6);
-    grid-template-rows: 120px 200px 1fr;
+    grid-template-rows: 110px 75px 1fr;
 }
 #enlargeBox:hover {
-    background-color: rgb(183, 183, 183);
+    background-color: rgb(180, 201, 187);
 }
 #enlargeBox:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
@@ -90,18 +76,57 @@
 .enlarge_ProfileList {
     display : grid;
     height : 80px;
-    grid-template-columns: 95px 200px 1fr;
+    grid-template-columns: 140px 200px 1fr;
 }
 #enlargeImg {
-    margin-left: 0px;
-    margin-top: 20px;
+    margin-left: 20px;
+    margin-top: 23px;
     border: solid 2px black;
+    width: 90px;
+    height: 90px;
 }
-#info1 { text-align: left;}
-#info2 { text-align: left;}
-
+#info1 { 
+    text-align: left;
+    margin-top: 8px;
+}
+#info2 { 
+    text-align: left;
+    margin-top: 8px;
+}
+.enlargeSignals {
+    text-align: center;
+    vertical-align: top; 
+    height: 75px !important; 
+    padding-top: 15px;
+}
 .w_icon {
+    padding-top: 10px;
+    padding-left: 10px;
     width: 50px;
     height: 50px;
 }
+#enlarge_w1 {
+    vertical-align: top;
+}
+#enlarge_w2 {
+    vertical-align: top;
+}
+#enlarge_w3 {
+    vertical-align: top;
+}
+#enlarge_w4 {
+    vertical-align: top;
+}
 
+canvas{
+    float : left;
+    width: 50% !important;
+    height: 180px !important;
+}
+
+warningLogLight {
+    color : red;
+}
+cautionLogLight {
+    color : orange;
+}

@@ -13,15 +13,14 @@ function WorkerInfo (name, age, part, posit, phone, locate, w1, w2, w3, w4) {
     this.w4 = w4;
 }
 
-// 시간 마다 착용기기의 데이터 업데이트
+/* 시간 마다 착용기기의 데이터 업데이트
 function ChangeData (locate, w1, w2, w3, w4) {
     this.locate = locate;
     this.w1 = w1;
     this.w2 = w2;
     this.w3 = w3;
     this.w4 = w4;
-}
-
+}*/
 
 function WriteInfo1(index) {
     document.write('이　　름 : ',workers[index].name)

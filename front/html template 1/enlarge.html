@@ -5,13 +5,13 @@
         <link href="css/style.css" rel="stylesheet" />
         <script src="js/worker-info.js"></script>
     </head>
-    <body onresize="parent.resizeTo(500,550)" onload="parent.resizeTo(500,550)" onclick="window.close()">
-        <button id="enlargeBox">
+    <body onresize="parent.resizeTo(605,652)" onload="parent.resizeTo(605,652)" onclick="window.close()">
+        <div id="enlargeBox">
             <div class="enlarge_ProfileList">
                 <img class="profileImage" id="enlargeImg" >
                 <p id="info1"></p><p id="info2"></p>
             </div>
-            <div class="signals" style="vertical-align: top;">
+            <div class="enlargeSignals">
                 <img class="w_icon" src="icon/heart-attack.png">
                 <span class="circle" id="enlarge_w1">w1</span>
 
@@ -26,16 +26,18 @@
             </div>
             <div class="charts">
                 <p>
-                    <span>1</span>
-                    <span>2</span>
+                    <canvas id="heartRate_chart"></canvas>
+                    <canvas id="bloodpressure_chart"></canvas>
                 </p>
                 <p>
-                    <span>3</span>
-                    <span>4</span>                
+                    <canvas id="O2_chart"></canvas>
+                    <canvas id="stress_chart"></canvas>
                 </p>
             </div>
-        </button>
+        </div>
     </body>
+    <script src="js/Download/chartMIn.js"></script>
+    <script src="js/chartCtrl.js"></script>
     <script src="js/profile.js"></script>
     <script src="js/lightCtrl.js"></script>
     <script src="js/enlarge.js"></script>
