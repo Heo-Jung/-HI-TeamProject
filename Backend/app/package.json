@@ -1,0 +1,28 @@
+{
+  "name": "nodejs_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "nodejs_backend": "bin/www.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start": "nodemon ./bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youngsuk0304/NodeJS_Backend.git"
+  },
+  "author": "hiha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youngsuk0304/NodeJS_Backend/issues"
+  },
+  "homepage": "https://github.com/youngsuk0304/NodeJS_Backend#readme"
+}
