@@ -16,5 +16,7 @@ router.get("/register",ctrl.output.register);//회원가입
 router.post("/login",ctrl.process.login);//로그인 버튼을 누르면 post로 로그인 경로 요청하며 ctrl에 process에있는 login
 router.post("/register",ctrl.process.register);//회원가입
 
+
+
 //router를 외부파일에서 사용할 수 있도록 던져주는 부분
 module.exports = router;

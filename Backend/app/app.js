@@ -32,8 +32,36 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/",home);//use()는 미들웨어를 등록해주는 메서드
 //login.ejs에서 login.js에 접근 할 수 있도록 처리가 필요
 
+//mysql
+const mysql=require('mysql');
+const sql=require('./src/models/sql.js');
 
-module.exports=app;
+const pool = mysql.createPool({
+    connectionLimit:10,
+    host:'127.0.0.1',
+    port:3306,
+    user :"root",
+    password:'1234',
+    database :'hi'
+});
+
+const query = async(alias,values)=>{
+    return new Promise ((resolve,reject)=> pool.query(sql[alias],values,(error,results)=>{
+        if(error){
+            console.log(error);
+            reject({
+                error
+            });
+        }else resolve(results);
+    }));
+}
+
+
+module.exports={
+    app,
+    query
+};
+
 
 //서비스 개발을 할때는 MVC패턴을 주로 이용하나  
 //MVP, MTV .. 다양한 설계 패턴이 존재
