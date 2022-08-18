@@ -74,12 +74,12 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Warning Log</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">현장 맞춤형 안전관리 모니터링 시스템</li>
+                            <li class="breadcrumb-item active"></li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-6">
+                            <div class="col-xl-6" style="display : none;">
                                 <div class="card mb-4">
                                     <div class="card-header" style="height: 45.3px">
                                         <i class="fas fa-chart-bar me-1"></i>
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
+                            <div class="col-xl-6" style="display : none;">
                                 <div class="card mb-4" id="cardMinWidth">
                                     <div class="card-header" >
                                         <i class="fas fa-address-book me-1"></i>
@@ -108,39 +108,30 @@
                                 </div>
                             </div>
                             <div class="col-xl-12">
-                                    
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-exclamation-triangle me-1"></i>
-                                            Warning Log
-                                    </div>
-                                    <div class="card-body">
-                                        <table id="datatablesSimple">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Phone</th>
-                                                    <th>Warning Log</th>
-                                                    <th>Date</th>
-                                                    <th>Age</th>
-                                                    <th>Remarks</th>
-                                                </tr>
-                                            </thead>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Phone</th>
-                                                    <th>Warning Log</th>
-                                                    <th>Date</th>
-                                                    <th>Age</th>
-                                                    <th>Remarks</th>
-                                                </tr>
-                                            </tfoot>
-                                            <tbody id="log_input">
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Warning Log</th>
+                                            <th>Date</th>
+                                            <th>Age</th>
+                                            <th>Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Warning Log</th>
+                                            <th>Date</th>
+                                            <th>Age</th>
+                                            <th>Remarks</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody id="log_input">
+                                    </tbody>
+                                </table>    
                             </div>
                         </div>
                     </div>
@@ -164,7 +155,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/logtable.js"></script>
-        <script src="js/video.js"></script>
         <script src="js/lightCtrl.js"></script>
         <script src="js/dataUpdate.js"></script>
     </body>
