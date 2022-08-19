@@ -1,6 +1,7 @@
 "use strict"
+import User from '../../models/User.js';
 
-const User = require("../../models/User");
+//const User = require("../../models/User");
 
 const output={
   home:(req, res) =>{
@@ -37,8 +38,6 @@ const process={//web화면에서 id와 pw에 입력한 데이터 받아옴
 };
 
 //모듈을 밖으로 빼주기 함수의 return 같은 느낌
-module.exports ={
-  output,
-  process,
-};
+export {output,process} ;
+
 

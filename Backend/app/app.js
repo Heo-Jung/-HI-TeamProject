@@ -1,16 +1,26 @@
-"use strict"; //엄격모드를 의미하며 이코마 스크립트 문법을 준수하겠다고 명시 해주는것. js파일 위에 넣는다.
+//"use strict"; //엄격모드를 의미하며 이코마 스크립트 문법을 준수하겠다고 명시 해주는것. js파일 위에 넣는다.
+
+import express from 'express';
+import bodyParser from "body-parser";
+import home from "./src/routes/home/index.js";
+import mysql from "mysql";
+import * as sql from './src/models/sql.js';
 
 //모듈
 //express 모듈을 이용한 서버 열기
-const express = require("express");//require이라는 명령어로 express라는 모듈을 다운
+//const express = require("express");//require이라는 명령어로 express라는 모듈을 다운
 const app = express();//변수 app안에 express() 넣어주고 
 
+//mysql
+// const mysql=require('mysql');
+// const sql=require('./src/models/sql.js');
+
 //body-parser이라는 모듈로 body를 쉽게 parsing 가능
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 
 //라우팅
 //우리가 만든 js파일을 require해서 불러오게 만드는 코드
-const home = require("./src/routes/home");
+//const home = require("./src/routes/home");
 
 
 app.set("views","./src/views");//set("화면 views를 만들고","그 views가 있는 폴더의 위치")
@@ -19,7 +29,7 @@ app.set("views","./src/views");//set("화면 views를 만들고","그 views가 �
 app.set("view engine","ejs");
 
 //미들웨어 등록 
-app.use(express.static(`${__dirname}/src/public`));
+app.use(express.static("./src/public"));
 //${__dirname}는 현재 app.js파일이 있는 경로를 반환
 //즉, app.js가 있는 dir에서/src안에 public폴더를 정적 경로로 추가
 //ejs파일에서 src로 경로를 지정해주면 public가 root경로로 지정 
@@ -32,17 +42,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/",home);//use()는 미들웨어를 등록해주는 메서드
 //login.ejs에서 login.js에 접근 할 수 있도록 처리가 필요
 
-//mysql
-const mysql=require('mysql');
-const sql=require('./src/models/sql.js');
+
 
 const pool = mysql.createPool({
-    connectionLimit:10,
-    host:'127.0.0.1',
-    port:3306,
-    user :"root",
-    password:'1234',
-    database :'hi'
+    connectionLimit:process.env.MYSQL_LIMIT,
+    host:process.env.MYSQL_HOST,
+    port:process.env.MYSQL_PORT,
+    user :process.env.MYSQL_USERNAME,
+    password:process.env.MYSQL_PROSSWORD,
+    database :process.env.MYSQL_DB
 });
 
 const query = async(alias,values)=>{
@@ -57,7 +65,7 @@ const query = async(alias,values)=>{
 }
 
 
-module.exports={
+export {
     app,
     query
 };

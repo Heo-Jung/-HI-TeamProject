@@ -1,6 +1,8 @@
 "use strict"
 //UserStorage에서 데이터를 받아 처리해야 하기때문에 
-const UserStorage = require("./UserStorage");
+import UserStorage from './UserStorage.js';
+
+//const UserStorage = require("./UserStorage");
 
 class User{
   constructor(body){
@@ -32,4 +34,4 @@ class User{
   }
 } 
 
-module.exports=User;
+export default  User;

@@ -1,6 +1,7 @@
 "use strict";
-
-const fs = require("fs").promises;
+//import express from 'express';
+import {default as fsWithCallbacks} from 'fs'
+const fs = fsWithCallbacks.promises;
 
 //User의 정보 저장된곳
 //getUsers를 이용하여 user의 정보를 얻을 수 있다.
@@ -63,4 +64,4 @@ class UserStorage{
   }
 }
 
-module.exports=UserStorage;
+export default  UserStorage;
