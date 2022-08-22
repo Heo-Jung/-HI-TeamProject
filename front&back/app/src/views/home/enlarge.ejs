@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="/js/home/css/style.css" rel="stylesheet" />
+        <script src="/js/home/js_front/worker-info.js"></script>
+    </head>
+    <body onresize="parent.resizeTo(605,652)" onload="parent.resizeTo(605,652)" onclick="window.close()">
+        <div id="enlargeBox">
+            <div class="enlarge_ProfileList">
+                <img class="profileImage" id="enlargeImg" >
+                <p id="info1"></p><p id="info2"></p>
+            </div>
+            <div class="enlargeSignals">
+                <img class="w_icon" src="/js/home/icon/heart-attack.png">
+                <span class="circle" id="enlarge_w1">w1</span>
+
+                <img class="w_icon" src="/js/home/icon/blood-pressure.png">
+                <span class="circle" id="enlarge_w2">w2</span>
+
+                <img class="w_icon" src="/js/home/icon/o2.png">
+                <span class="circle" id="enlarge_w3">w3</span>
+
+                <img class="w_icon" src="/js/home/icon/stress.png">
+                <span class="circle" id="enlarge_w4">w4</span>
+            </div>
+            <div class="charts">
+                <p>
+                    <canvas id="heartRate_chart"></canvas>
+                    <canvas id="bloodpressure_chart"></canvas>
+                </p>
+                <p>
+                    <canvas id="O2_chart"></canvas>
+                    <canvas id="stress_chart"></canvas>
+                </p>
+            </div>
+        </div>
+    </body>
+    <script src="/js/home/js_front/Download/chartMIn.js"></script>
+    <script src="/js/home/js_front/chartCtrl.js"></script>
+    <script src="/js/home/js_front/profile.js"></script>
+    <script src="/js/home/js_front/enlarge.js"></script>
+</html>
