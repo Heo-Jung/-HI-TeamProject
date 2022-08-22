@@ -53,4 +53,4 @@ workers.push(Human6 = new WorkerInfo("테스트",25,"1조","테스터","010-0000
 
 workersMount= workers.length
 
-localStorage.setItem("WorkersMount",workersMount);
+localStorage.setItem("workersMount",workersMount);

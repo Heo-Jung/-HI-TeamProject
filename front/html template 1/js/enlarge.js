@@ -34,7 +34,9 @@ let enlargeBOX = document.getElementById('enlargeBox');
 //                                                          //
 //////////////////////////////////////////////////////////////
 
-
+const warning_light_color = 'red';
+const caution_ligth_color = 'orange';
+const safe_light_color = 'rgb(16, 242, 16)';
 
 // 정보 표시를 할 사람의 Index
 let workerSelect = localStorage.getItem("workerSelect")
@@ -50,17 +52,82 @@ function updateEnlarge() {
     enlargeInfo2.innerHTML = '나　　이 : '+workers[selectIndex].age+'<br>직　　책 : '+workers[selectIndex].posit+'<br>위　　치 : '+workers[selectIndex].locate+'<br>';
 
     enlarge_w1.innerHTML = workers[selectIndex].w1;
-    light1(selectIndex,workers[selectIndex].w1, enlarge_w1);
+    enlargeLight1(selectIndex,workers[selectIndex].w1, enlarge_w1);
 
     enlarge_w2.innerHTML = workers[selectIndex].w2;
-    light2(selectIndex,workers[selectIndex].w2, enlarge_w2);
+    enlargeLight2(selectIndex,workers[selectIndex].w2, enlarge_w2);
 
     enlarge_w3.innerHTML = workers[selectIndex].w3;
-    light3(selectIndex,workers[selectIndex].w3, enlarge_w3)
+    enlargeLight3(selectIndex,workers[selectIndex].w3, enlarge_w3)
     
     enlarge_w4.innerHTML = workers[selectIndex].w4;
-    light4(selectIndex,workers[selectIndex].w4, enlarge_w4)
+    enlargeLight4(selectIndex,workers[selectIndex].w4, enlarge_w4)
 }
 
 
 
+//심박수 신호 제어
+function enlargeLight1(index, heartRate, WantToChangeSingal) {
+    if (heartRate>=150) {
+        WantToChangeSingal.style.background = warning_light_color;
+    }
+    else if (heartRate>=120) {
+        WantToChangeSingal.style.background = caution_ligth_color;
+    }
+    else if (heartRate>=80) {
+        WantToChangeSingal.style.background = safe_light_color;
+    }
+    else if (heartRate>=55) {
+        WantToChangeSingal.style.background = caution_ligth_color;
+    }
+    else {
+        WantToChangeSingal.style.background = warning_light_color;
+    }
+    
+}
+
+// 혈압 신호 제어
+function enlargeLight2(index, BloodPressure, WantToChangeSingal) {
+    if (BloodPressure>=140) {
+        WantToChangeSingal.style.background = warning_light_color;
+    }
+    else if (BloodPressure>=120) {
+        WantToChangeSingal.style.background = caution_ligth_color;
+    }
+    else if (BloodPressure>=80) {
+        WantToChangeSingal.style.background = safe_light_color;
+    }
+    else if (BloodPressure>=55) {
+        WantToChangeSingal.style.background = caution_ligth_color;
+    }
+    else {
+        WantToChangeSingal.style.background = warning_light_color;
+    }   
+}
+
+// 혈중산소포화도 신호 제어
+function enlargeLight3(index, O2, WantToChangeSingal) {
+    if (O2>=80) {
+        WantToChangeSingal.style.background = safe_light_color;
+    }
+    else if (O2>=60) {
+        WantToChangeSingal.style.background = caution_ligth_color;
+    }
+    else {
+        WantToChangeSingal.style.background = warning_light_color;
+    } 
+}
+
+// 스트레스 신호 제어
+function enlargeLight4(index, Stress, WantToChangeSingal) {
+    if (Stress>=80) {
+        WantToChangeSingal.style.background = warning_light_color;
+    }
+    else if (Stress>=60) {
+        WantToChangeSingal.style.background = caution_ligth_color;
+    }
+    else {
+        WantToChangeSingal.style.background = safe_light_color;
+        
+    } 
+}
