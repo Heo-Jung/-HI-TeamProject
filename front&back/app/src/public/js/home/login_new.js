@@ -26,6 +26,7 @@ function onLoginSubmit(event){  //추후에 DB연결해서 관리자 테이블 �
             if(checkID.value == masterID && checkPW.value == masterPW){
                 location.href = "/register";
             }else{
+                localStorage.setItem('loggedID', checkID.value);
                 location.href ="/";
             }
         }else{
